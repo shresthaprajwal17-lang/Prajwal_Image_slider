@@ -1,0 +1,168 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f5f8;
+    color: #222;
+    min-height: 100vh;
+}
+
+.page-header {
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.page-header h1 {
+    margin-bottom: 10px;
+    color: #17365d;
+}
+
+.page-header p {
+    color: #555;
+}
+
+main {
+    width: 100%;
+    padding: 15px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.slider-viewport {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ddd;
+}
+
+.slider-track {
+    display: flex;
+    width: 100%;
+    transform: translateX(0);
+    transition: transform 450ms ease-in-out;
+    will-change: transform;
+}
+
+.slide {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: clamp(250px, 55vw, 550px);
+    object-fit: cover;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background 200ms ease;
+}
+
+.slider-button:hover {
+    background: #17365d;
+}
+
+.slider-button:focus-visible,
+.slider-dot:focus-visible {
+    outline: 3px solid #f0a500;
+    outline-offset: 3px;
+}
+
+.previous {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 18px 10px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background: #b7bdc7;
+    cursor: pointer;
+    transition: background 200ms ease,
+                transform 200ms ease;
+}
+
+.slider-dot.active {
+    background: #17365d;
+    transform: scale(1.25);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .page-header {
+        padding: 22px 10px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    .slider-button {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .previous {
+        left: 8px;
+    }
+
+    .next {
+        right: 8px;
+    }
+
+    .slider-dots {
+        gap: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slider-track,
+    .slider-button,
+    .slider-dot {
+        transition: none;
+    }
+}

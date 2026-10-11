@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="slider.js" defer></script>
+</head>
+
+<body>
+    <header class="page-header">
+        <h1>Image Slider Library</h1>
+        <p>Explore beautiful places around the world</p>
+    </header>
+
+    <main>
+        <section class="slider" aria-label="Image gallery">
+            <div class="slider-viewport">
+                <div class="slider-track">
+                    <div class="slide">
+                        <img src="images/Img 1.jpeg" alt="A green village on a hill in Bandipur.">
+                    </div>
+                    <div class="slide">
+                        <img src="images/Img 2.jpeg"
+                            alt="A green forest with big snowy mountains behind it seen from the top of the klainchowk">
+                    </div>
+                    <div class="slide">
+                        <img src="images/Img 3.jpeg" alt="Orange sunset light on buildings at Kalinchowk.">
+                    </div>
+                    <div class="slide">
+                        <img src="images/Img 4.jpeg" alt="A snowy mountain at Kalinchowk with small buildings.">
+                    </div>
+                </div>
+            </div>
+
+            <button class="slider-button previous" type="button" aria-label="Previous image">
+                &#10094;
+            </button>
+
+            <button class="slider-button next" type="button" aria-label="Next image">
+                &#10095;
+            </button>
+
+            <div class="slider-dots" role="group" aria-label="Choose an image">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Created by Prajwal Shrestha</p>
+    </footer>
+</body>
+
+</html>
